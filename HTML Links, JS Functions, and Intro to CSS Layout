@@ -1,0 +1,386 @@
+Creating Links in HTML
+A link or hyperlink is a connection from one web resource to another. Links allow users to move seamlessly from one page to another, on any server anywhere in the world.
+
+A link has two ends, called anchors. The link starts at the source anchor and points to the destination anchor, which may be any web resource, for example, an image, an audio or video clip, a PDF file, an HTML document or an element within the document itself, and so on.
+
+By default, links will appear as follow in most of the browsers:
+
+An unvisited link is underlined and blue.
+A visited link is underlined and purple.
+An active link is underlined and red.
+However, you can overwrite this using CSS. Learn more about styling links.
+
+HTML Link Syntax
+Links are specified in HTML using the <a> tag.
+
+A link or hyperlink could be a word, group of words, or image.
+
+<a href="url">Link text</a>
+Anything between the opening <a> tag and the closing </a> tag becomes the part of the link that the user sees and clicks in a browser. Here are some examples of the links:
+
+ExampleTry this code »
+<a href="https://www.google.com/">Google Search</a>
+<a href="https://www.tutorialrepublic.com/">Tutorial Republic</a>
+<a href="images/kites.jpg">
+    <img src="kites-thumb.jpg" alt="kites">
+</a>
+The href attribute specifies the target of the link. Its value can be an absolute or relative URL.
+
+An absolute URL is the URL that includes every part of the URL format, such as protocol, host name, and path of the document, e.g., https://www.google.com/, https://www.example.com/form.php, etc. While, relative URLs are page-relative paths, e.g., contact.html, images/smiley.png, and so on. A relative URL never includes the http:// or https:// prefix.
+
+Setting the Targets for Links
+The target attribute tells the browser where to open the linked document. There are four defined targets, and each target name starts with an underscore(_) character:
+
+_blank — Opens the linked document in a new window or tab.
+_parent — Opens the linked document in the parent window.
+_self — Opens the linked document in the same window or tab as the source document. This is the default, hence it is not necessary to explicitly specify this value.
+_top — Opens the linked document in the full browser window.
+Try out the following example to understand how the link's target basically works:
+
+ExampleTry this code »
+<a href="/about-us.php" target="_top">About Us</a>
+<a href="https://www.google.com/" target="_blank">Google</a>
+<a href="images/sky.jpg" target="_parent">
+    <img src="sky-thumb.jpg" alt="Cloudy Sky">
+</a>
+Tip: If your web page is placed inside an iframe, you can use the target="_top" on the links to break out of the iframe and show the target page in full browser window.
+
+Creating Bookmark Anchors
+You can also create bookmark anchors to allow users to jump to a specific section of a web page. Bookmarks are especially helpful if you have a very long web page.
+
+Creating bookmarks is a two-step process: first add the id attribute on the element where you want to jump, then use that id attribute value preceded by the hash sign (#) as the value of the href attribute of the <a> tag, as shown in the following example:
+
+ExampleTry this code »
+<a href="#sectionA">Jump to Section A</a>
+<h2 id="sectionA">Section A</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+Tip: You can even jump to a section of another web page by specifying the URL of that page along with the anchor (i.e. #elementId) in the href attribute, for example, <a href="mypage.html#topicA">Go to TopicA</a>.
+
+Creating Download Links
+You can also create the file download link in exactly the same fashion as placing text links. Just point the destination URL to the file you want to be available for download.
+
+In the following example we've created the download links for ZIP, PDF and JPG files.
+
+ExampleTry this code »
+<a href="downloads/test.zip">Download Zip file</a>
+<a href="downloads/masters.pdf">Download PDF file</a>
+<a href="downloads/sample.jpg">Download Image file</a>
+Note: When you click a link that points to a PDF or image file, the file is not downloaded to your hard drive directly. It will only open the file in your web browser. Further you can save or download it to your hard drive on a permanent basis.
+
+PREVIOUS PAGENEXT PAGE
+----------------------------------------------------------------------------------------------------------------------------
+A webpage layout is very important to give better look to your website. It takes considerable time to design a website's layout with great look and feel.
+
+Now-a-days, all modern websites are using CSS and JavaScript based framework to come up with responsive and dynamic websites but you can create a good layout using simple HTML tables or division tags in combination with other formatting tags. This chapter will give you few examples on how to create a simple but working layout for your webpage using pure HTML and its attributes.
+
+HTML Layout - Using Tables
+The simplest and most popular way of creating layouts is using HTML <table> tag. These tables are arranged in columns and rows, so you can utilize these rows and columns in whatever way you like.
+
+Example
+For example, the following HTML layout example is achieved using a table with 3 rows and 2 columns but the header and footer column spans both columns using the colspan attribute −
+
+Live Demo
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>HTML Layout using Tables</title>
+   </head>
+
+   <body>
+      <table width = "100%" border = "0">
+         
+         <tr>
+            <td colspan = "2" bgcolor = "#b5dcb3">
+               <h1>This is Web Page Main title</h1>
+            </td>
+         </tr>
+         <tr valign = "top">
+            <td bgcolor = "#aaa" width = "50">
+               <b>Main Menu</b><br />
+               HTML<br />
+               PHP<br />
+               PERL...
+            </td>
+            
+            <td bgcolor = "#eee" width = "100" height = "200">
+               Technical and Managerial Tutorials
+            </td>
+         </tr>
+         <tr>
+            <td colspan = "2" bgcolor = "#b5dcb3">
+               <center>
+                  Copyright © 2007 Tutorialspoint.com
+               </center>
+            </td>
+         </tr>
+         
+      </table>
+   </body>
+
+</html>
+This will produce the following result −
+
+
+Multiple Columns Layout - Using Tables
+You can design your webpage to put your web content in multiple pages. You can keep your content in middle column and you can use left column to use menu and right column can be used to put advertisement or some other stuff. This layout will be very similar to what we have at our website tutorialspoint.com.
+
+Example
+Here is an example to create three column layout −
+
+Live Demo
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Three Column HTML Layout</title>
+   </head>
+
+   <body>
+      <table width = "100%" border = "0">
+         
+         <tr valign = "top">
+            <td bgcolor = "#aaa" width = "20%">
+               <b>Main Menu</b><br />
+               HTML<br />
+               PHP<br />
+               PERL...
+            </td>
+				
+            <td bgcolor = "#b5dcb3" height = "200" width = "60%">
+               Technical and Managerial Tutorials
+            </td>
+				
+            <td bgcolor = "#aaa" width = "20%">
+               <b>Right Menu</b><br />
+               HTML<br />
+               PHP<br />
+               PERL...
+            </td>
+         </tr>
+         
+      <table>
+   </body>
+
+</html>
+This will produce the following result −
+
+
+HTML Layouts - Using DIV, SPAN
+The <div> element is a block level element used for grouping HTML elements. While the <div> tag is a block-level element, the HTML <span> element is used for grouping elements at an inline level.
+
+Although we can achieve pretty nice layouts with HTML tables, but tables weren't really designed as a layout tool. Tables are more suited to presenting tabular data.
+
+Note − This example makes use of Cascading Style Sheet (CSS), so before understanding this example you need to have a better understanding on how CSS works.
+
+Example
+Here we will try to achieve same result using <div> tag along with CSS, whatever you have achieved using <table> tag in previous example.
+
+Live Demo
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>HTML Layouts using DIV, SPAN</title>
+   </head>
+
+   <body>
+      <div style = "width:100%">
+		
+         <div style = "background-color:#b5dcb3; width:100%">
+            <h1>This is Web Page Main title</h1>
+         </div>
+			
+         <div style = "background-color:#aaa; height:200px; width:100px; float:left;">
+            <div><b>Main Menu</b></div>
+            HTML<br />
+            PHP<br />
+            PERL...
+         </div>
+			
+         <div style = "background-color:#eee; height:200px; width:350px; float:left;" >
+            <p>Technical and Managerial Tutorials</p>
+         </div>
+		
+         <div style = "background-color:#aaa; height:200px; width:100px; float:right;">
+            <div><b>Right Menu</b></div>
+            HTML<br />
+            PHP<br />
+            PERL...
+         </div>
+			
+         <div style = "background-color:#b5dcb3; clear:both">
+            <center>
+               Copyright © 2007 Tutorialspoint.com
+            </center>
+         </div>
+			
+      </div>
+   </body>
+
+</html>
+This will produce the following result −
+
+
+You can create better layout using DIV, SPAN along with CSS. For more information on CSS, please refer to CSS Tutorial.
+----------------------------------------------------------------------------------------------------------------------------------
+JavaScript function objects are used to define a piece of JavaScript code. This code can be called within a JavaScript code as and when required.
+
+Can be created by function constructor.
+
+Code defined by a function can be called by function().
+
+Javascript Function Objects Property
+
+Name	Description	Version
+arguments	An array corresponding to the arguments passed to a function.	Implemented in JavaScript 1.1
+arguments.callee	Refers the currently executing function.	Implemented in JavaScript 1.1
+arguments.length	Refers the number of arguments defined for a function.	Implemented in JavaScript 1.1
+constructor	Specifies the function that creates an object.	Implemented in JavaScript 1.1
+length	The number of arguments defined by the function.	Implemented in JavaScript 1.1
+prototype	Allows adding properties to a Function object.	Implemented in JavaScript 1.1
+
+Javascript Function Objects Methods
+
+Name	Description	Version
+call	Permit to call a method of another object in the context of a different object (the calling object).	Implemented in JavaScript 1.1
+toSource	Returns the source code of the function.	Implemented in JavaScript 1.1
+toString	Returns a string representing the source code of the function.	Implemented in JavaScript 1.1
+valueOf	Returns a string representing the source code of the function.	Implemented in JavaScript 1.1
+JavaScript arguments Property : Function Object
+
+The arguments array is a local variable available within all function objects as function's arguments; arguments as a property of a function is no longer used.
+This array contains an entry for each argument passed to the function.
+
+For example, if a function passes three arguments, you can refer to the arguments as follows :
+arguments[0]
+arguments[1]
+arguments[2]
+
+The arguments array can also be declared with a function name :
+myfunc.arguments[0]
+myfunc.arguments[1]
+myfunc.arguments[2]
+Where myfunc is the name of the function.
+
+The arguments array is available only within a function body. Attempting to access the arguments array outside a function declaration results in an error.
+
+You can use the arguments array if you call a function with more arguments than it is formally declared to accept. This technique is useful for functions that can pass a variable number of arguments. You can use arguments.length to determine the number of arguments passed to the function, and then process each argument by using the arguments array.
+
+The arguments array has three properties : arguments.callee, arguments.caller, arguments.length.
+
+Note : arguments.caller property specifies the name of the function that invoked the currently executing function. The property is deprecated.
+
+JavaScript arguments.callee Property : Function Object
+
+The arguments.callee property refers the currently executing function. It is available only within the body of a function.
+
+Syntax
+
+arguments.callee
+Example:
+
+In the following web document arguments.callee property is used to calculate the factorial of a number calling the factorial() function.
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title>JavaScript Function object - arguments.callee property example</title>
+</head>
+<body>
+<h1 style="color: 
+red">JavaScript Function object : arguments.callee property</h1>
+<hr />
+<script type="text/javascript">
+//This is done to make the following JavaScript code compatible to XHTML. <![CDATA[
+function factorial(n){
+if (n <= 0)
+return 1;
+else
+return arguments.callee(n - 1)
+}
+document.write(factorial(4));
+//]]>
+</script>
+</body>
+</html>
+
+View the example in the browser
+
+Supported Browser
+
+Internet Explorer 7	Firefox 3.6	Google Chrome 7	Safari 5.0.1	Opera 10
+Yes	Yes	Yes	Yes	Yes
+JavaScript arguments.length Property : Function Object
+
+The arguments.length specifies the number of arguments defined for a function.
+
+Syntax
+
+arguments.length 
+Example of Function Object: arguments.length Property
+
+The following web document demonstrates the use of arguments.length property.
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title>JavaScript Function object - arguments.length property example</title>
+</head>
+<body>
+<h1 style="color: 
+red">JavaScript Function object : arguments.length property</h1>
+<hr />
+<script type="text/javascript">
+//This is done to make the following JavaScript code compatible to XHTML. <![CDATA[
+function rglength(x,y,z)
+{
+return ;
+}
+alert('No. of arguments passed in the function : '+rglength.length)
+//]]>
+</script>
+</body>
+</html>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Why pair program?
+While learning to code, developers likely study several programming languages. Similar to a foreign language class, there are four fundamental skills that help anyone learn a new language: Listening: hearing and interpreting the vocabulary Speaking: using the correct words to communicate an idea Reading: understanding what written language intends to convey Writing: producing from scratch a meaningful
+
+Pair programming touches on all four skills: developers explain out loud what the code should do, listen to others’ guidance, read code that others have written, and write code themselves.
+
+During a five-hour paired lab session, Code Fellows students work on all four of these language-specific skills. The abilities they foster will serve them well in completing assignments, in their own communication and learning, in interviews, and in readiness for a job at a company that utilizes this agile practice.
+
+Wow, all that? Let’s take a look!
+
+1. Greater efficiency
+It is a common misconception that pair programming takes a lot longer and is less efficient. In reality, when two people focus on the same code base, it is easier to catch mistakes in the making. Research indicates that pair programing takes slightly longer, but produces higher-quality code that doesn’t require later effort in troubleshooting and debugging (let alone exposing users to a broken product). So, in the long-run, it’s often actually more efficient than two people working on separate features. When coming up with ideas and discussing solutions out loud, two programmers may come to a solution faster than one programmer on their own. Also, when the pair is stuck, both programmers can research the problem and reach a solution faster. Researches also identified pairing enhances technical skills, team communication, and even enjoyability of coding in the workplace.
+
+2. Engaged collaboration
+When two programmers focus on the same code, the experience is more engaging and both programmers are more focused than if they were working alone. It is harder to procrastinate or get off track when someone else is relying on you to complete the work. Popping open your Facebook timeline is just that less enticing when someone else is looking at your screen.
+
+Another important aspect of learning to program is knowing when to ask for help. We advise our students to spend no more than fifteen minutes stuck on a problem before asking a teaching assistant or instructor for help. When developers pair program, they rely more on each other and can often find a solution together without needing to ask for additional help. Ultimately, this boosts overall confidence.
+
+3. Learning from fellow students
+Everyone has a different approach to problem solving; working with a teammate can expose developers to techniques they otherwise would not have thought of. If one developer has a unique approach to a specific problem, pair programming exposes the other developer to a new solution.
+
+Often times, the developers in a pairing have different skill sets. If one programmer is more experienced in a certain skill, they can teach a student who is less familiar with that area. The less experienced developer benefits from the experienced developer’s knowledge and guidance, and the latter benefits from explaining the topic in their own words, further solidifying their own understanding.
+
+4. Social skills
+Pair programming is great for improving social skills. When working with someone who has a different coding style, communication is key. This can become more difficult when two programmers have different personalities. Pair programming not only improves programming skills, but can also help programmers develop their interpersonal skills. When just grabbing the keyboard and taking over isn’t an option, getting good at finding the right words is a skill unto itself.
+
+This has long-term career impacts. As much as employers want strong programmers, they know it’s essential to hire people who can work well with others.
+
+5. Job interview readiness
+A common step in many interview processes involves pair programming between a current employee and an applicant, either in person or through a shared screen. They will carry out exercises together, such as code challenges, building a project or feature, or debugging an existing code base. By doing so, companies can get a better feel for how an applicant will fit into the team and their collaboration style.
+
+For most roles, the ability to work with and learn from others and stellar communication skills are as (or more!) important to a company than specific technical skills. Pair programming strengthens all of those skills.
+
+6. Work environment readiness
+Many companies that utilize pair programing expect to train fresh hires from CS-degree programs on how they operate to actually deliver a product. Code Fellows graduates who are already familiar with how pairing works can hit the ground running at a new job, with one less hurdle to overcome.
+
+Ready to dive in and improve your pair programming and your coding skills? See upcoming courses »
+
